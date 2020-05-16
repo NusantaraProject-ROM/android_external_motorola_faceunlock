@@ -1,62 +1,78 @@
-From b5344669b1700b09fdaa9bc932249e426e7c0adb Mon Sep 17 00:00:00 2001
+From b5bc47dddd82fdc57a605c92f6a69f30c3179919 Mon Sep 17 00:00:00 2001
 From: jhenrique09 <jhenrique09.mcz@hotmail.com>
 Date: Thu, 26 Mar 2020 04:56:47 -0300
-Subject: [PATCH] Settings: Add strings for face unlock feature
+Subject: [PATCH] Settings: Port face unlock feature [4/4]
+
+* From motorola/foles_retail/foles:10/QPF30.130-15-7/38ece7:user/release-keys
 
 Change-Id: I906317e3d9c993fc5001ed9939dc25e67d3e636f
-Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
 ---
- res/values-ar-rSA/moto_strings.xml | 5 +++++
- res/values-az-rAZ/moto_strings.xml | 5 +++++
- res/values-bg-rBG/moto_strings.xml | 5 +++++
- res/values-bn-rBD/moto_strings.xml | 5 +++++
- res/values-ca-rES/moto_strings.xml | 5 +++++
- res/values-cs-rCZ/moto_strings.xml | 5 +++++
- res/values-da-rDK/moto_strings.xml | 5 +++++
- res/values-de-rDE/moto_strings.xml | 5 +++++
- res/values-el-rGR/moto_strings.xml | 5 +++++
- res/values-es-rES/moto_strings.xml | 5 +++++
- res/values-fa-rIR/moto_strings.xml | 5 +++++
- res/values-fi-rFI/moto_strings.xml | 5 +++++
- res/values-fr-rFR/moto_strings.xml | 5 +++++
- res/values-hi-rIN/moto_strings.xml | 5 +++++
- res/values-hr-rHR/moto_strings.xml | 5 +++++
- res/values-hu-rHU/moto_strings.xml | 5 +++++
- res/values-in-rID/moto_strings.xml | 5 +++++
- res/values-it-rIT/moto_strings.xml | 5 +++++
- res/values-iw-rIL/moto_strings.xml | 5 +++++
- res/values-ja-rJP/moto_strings.xml | 5 +++++
- res/values-km-rKH/moto_strings.xml | 5 +++++
- res/values-ko-rKR/moto_strings.xml | 5 +++++
- res/values-ku-rTR/moto_strings.xml | 5 +++++
- res/values-mk-rMK/moto_strings.xml | 5 +++++
- res/values-mr-rIN/moto_strings.xml | 5 +++++
- res/values-ms-rMY/moto_strings.xml | 5 +++++
- res/values-my-rMM/moto_strings.xml | 5 +++++
- res/values-nb-rNO/moto_strings.xml | 5 +++++
- res/values-nl-rNL/moto_strings.xml | 5 +++++
- res/values-pl-rPL/moto_strings.xml | 5 +++++
- res/values-pt-rBR/moto_strings.xml | 5 +++++
- res/values-pt-rPT/moto_strings.xml | 5 +++++
- res/values-ro-rRO/moto_strings.xml | 5 +++++
- res/values-ru-rRU/moto_strings.xml | 5 +++++
- res/values-si-rLK/moto_strings.xml | 5 +++++
- res/values-sk-rSK/moto_strings.xml | 5 +++++
- res/values-sl-rSI/moto_strings.xml | 5 +++++
- res/values-sr-rSP/moto_strings.xml | 5 +++++
- res/values-sv-rSE/moto_strings.xml | 5 +++++
- res/values-ta-rIN/moto_strings.xml | 5 +++++
- res/values-th-rTH/moto_strings.xml | 5 +++++
- res/values-tl-rPH/moto_strings.xml | 5 +++++
- res/values-tr-rTR/moto_strings.xml | 5 +++++
- res/values-uk-rUA/moto_strings.xml | 5 +++++
- res/values-vi-rVN/moto_strings.xml | 5 +++++
- res/values-zh-rCN/moto_strings.xml | 5 +++++
- res/values-zh-rHK/moto_strings.xml | 5 +++++
- res/values-zh-rSG/moto_strings.xml | 5 +++++
- res/values-zh-rTW/moto_strings.xml | 5 +++++
- res/values/moto_strings.xml        | 5 +++++
- 50 files changed, 250 insertions(+)
+ Android.mk                                    |  3 +-
+ res/values-ar-rSA/moto_strings.xml            |  5 ++
+ res/values-az-rAZ/moto_strings.xml            |  5 ++
+ res/values-bg-rBG/moto_strings.xml            |  5 ++
+ res/values-bn-rBD/moto_strings.xml            |  5 ++
+ res/values-ca-rES/moto_strings.xml            |  5 ++
+ res/values-cs-rCZ/moto_strings.xml            |  5 ++
+ res/values-da-rDK/moto_strings.xml            |  5 ++
+ res/values-de-rDE/moto_strings.xml            |  5 ++
+ res/values-el-rGR/moto_strings.xml            |  5 ++
+ res/values-es-rES/moto_strings.xml            |  5 ++
+ res/values-fa-rIR/moto_strings.xml            |  5 ++
+ res/values-fi-rFI/moto_strings.xml            |  5 ++
+ res/values-fr-rFR/moto_strings.xml            |  5 ++
+ res/values-hi-rIN/moto_strings.xml            |  5 ++
+ res/values-hr-rHR/moto_strings.xml            |  5 ++
+ res/values-hu-rHU/moto_strings.xml            |  5 ++
+ res/values-in-rID/moto_strings.xml            |  5 ++
+ res/values-it-rIT/moto_strings.xml            |  5 ++
+ res/values-iw-rIL/moto_strings.xml            |  5 ++
+ res/values-ja-rJP/moto_strings.xml            |  5 ++
+ res/values-km-rKH/moto_strings.xml            |  5 ++
+ res/values-ko-rKR/moto_strings.xml            |  5 ++
+ res/values-ku-rTR/moto_strings.xml            |  5 ++
+ res/values-mk-rMK/moto_strings.xml            |  5 ++
+ res/values-mr-rIN/moto_strings.xml            |  5 ++
+ res/values-ms-rMY/moto_strings.xml            |  5 ++
+ res/values-my-rMM/moto_strings.xml            |  5 ++
+ res/values-nb-rNO/moto_strings.xml            |  5 ++
+ res/values-nl-rNL/moto_strings.xml            |  5 ++
+ res/values-pl-rPL/moto_strings.xml            |  5 ++
+ res/values-pt-rBR/moto_strings.xml            |  5 ++
+ res/values-pt-rPT/moto_strings.xml            |  5 ++
+ res/values-ro-rRO/moto_strings.xml            |  5 ++
+ res/values-ru-rRU/moto_strings.xml            |  5 ++
+ res/values-si-rLK/moto_strings.xml            |  5 ++
+ res/values-sk-rSK/moto_strings.xml            |  5 ++
+ res/values-sl-rSI/moto_strings.xml            |  5 ++
+ res/values-sr-rSP/moto_strings.xml            |  5 ++
+ res/values-sv-rSE/moto_strings.xml            |  5 ++
+ res/values-ta-rIN/moto_strings.xml            |  5 ++
+ res/values-th-rTH/moto_strings.xml            |  5 ++
+ res/values-tl-rPH/moto_strings.xml            |  5 ++
+ res/values-tr-rTR/moto_strings.xml            |  5 ++
+ res/values-uk-rUA/moto_strings.xml            |  5 ++
+ res/values-vi-rVN/moto_strings.xml            |  5 ++
+ res/values-zh-rCN/moto_strings.xml            |  5 ++
+ res/values-zh-rHK/moto_strings.xml            |  5 ++
+ res/values-zh-rSG/moto_strings.xml            |  5 ++
+ res/values-zh-rTW/moto_strings.xml            |  5 ++
+ res/values/moto_strings.xml                   |  5 ++
+ res/xml/security_settings_face.xml            |  3 +-
+ src/com/android/settings/Utils.java           | 15 +++++
+ .../BiometricEnrollIntroduction.java          |  2 +-
+ .../face/FaceEnrollIntroduction.java          | 43 ++++++++++++
+ ...FaceProfileStatusPreferenceController.java |  2 +-
+ .../FaceSettingsAppPreferenceController.java  |  6 ++
+ ...SettingsAttentionPreferenceController.java |  5 ++
+ ...ceSettingsConfirmPreferenceController.java |  5 ++
+ ...aceSettingsFooterPreferenceController.java |  8 ++-
+ ...aceSettingsManagePreferenceController.java | 43 ++++++++++++
+ ...tingsRemoveButtonPreferenceController.java |  9 ++-
+ .../face/FaceStatusPreferenceController.java  | 65 +++++++++++++++++--
+ .../settings/password/ChooseLockGeneric.java  | 18 +++--
+ .../settings/security/SecuritySettings.java   |  2 +-
+ 65 files changed, 464 insertions(+), 15 deletions(-)
  create mode 100644 res/values-ar-rSA/moto_strings.xml
  create mode 100644 res/values-az-rAZ/moto_strings.xml
  create mode 100644 res/values-bg-rBG/moto_strings.xml
@@ -107,10 +123,25 @@ Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
  create mode 100644 res/values-zh-rSG/moto_strings.xml
  create mode 100644 res/values-zh-rTW/moto_strings.xml
  create mode 100644 res/values/moto_strings.xml
+ create mode 100644 src/com/android/settings/biometrics/face/FaceSettingsManagePreferenceController.java
 
+diff --git a/Android.mk b/Android.mk
+index 8e4149aec36..5a71c509b98 100644
+--- a/Android.mk
++++ b/Android.mk
+@@ -52,7 +52,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
+     settings-log-bridge-protos-lite \
+     contextualcards \
+     settings-logtags \
+-    zxing-core-1.7
++    zxing-core-1.7 \
++    faceunlock_utils
+ 
+ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+     packages/apps/ConfigCenter/res
 diff --git a/res/values-ar-rSA/moto_strings.xml b/res/values-ar-rSA/moto_strings.xml
 new file mode 100644
-index 0000000000..be6b0650f2
+index 00000000000..be6b0650f2c
 --- /dev/null
 +++ b/res/values-ar-rSA/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -121,7 +152,7 @@ index 0000000000..be6b0650f2
 +</resources>
 diff --git a/res/values-az-rAZ/moto_strings.xml b/res/values-az-rAZ/moto_strings.xml
 new file mode 100644
-index 0000000000..0f65b58471
+index 00000000000..0f65b584716
 --- /dev/null
 +++ b/res/values-az-rAZ/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -132,7 +163,7 @@ index 0000000000..0f65b58471
 +</resources>
 diff --git a/res/values-bg-rBG/moto_strings.xml b/res/values-bg-rBG/moto_strings.xml
 new file mode 100644
-index 0000000000..67814803ca
+index 00000000000..67814803ca8
 --- /dev/null
 +++ b/res/values-bg-rBG/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -143,7 +174,7 @@ index 0000000000..67814803ca
 +</resources>
 diff --git a/res/values-bn-rBD/moto_strings.xml b/res/values-bn-rBD/moto_strings.xml
 new file mode 100644
-index 0000000000..35797f2381
+index 00000000000..35797f2381e
 --- /dev/null
 +++ b/res/values-bn-rBD/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -154,7 +185,7 @@ index 0000000000..35797f2381
 +</resources>
 diff --git a/res/values-ca-rES/moto_strings.xml b/res/values-ca-rES/moto_strings.xml
 new file mode 100644
-index 0000000000..9d968e8ba7
+index 00000000000..9d968e8ba7e
 --- /dev/null
 +++ b/res/values-ca-rES/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -165,18 +196,18 @@ index 0000000000..9d968e8ba7
 +</resources>
 diff --git a/res/values-cs-rCZ/moto_strings.xml b/res/values-cs-rCZ/moto_strings.xml
 new file mode 100644
-index 0000000000..6757c93888
+index 00000000000..b67bf710799
 --- /dev/null
 +++ b/res/values-cs-rCZ/moto_strings.xml
 @@ -0,0 +1,5 @@
 +<?xml version="1.0" encoding="utf-8"?>
 +<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-+    <string name="security_settings_face_settings_footer_moto">Zařízení odemknete pomocí odemknutí obličejem.\n\nNezapomeňte:\nTelefon můžete odemknout pohledem na obrazovku, i když to nemáte v úmyslu.\n\nVáš telefon může odemknout i jiná osoba, pokud jej podrží před vaším obličejem a vy budete mít otevřené oči.\n\nVáš telefon mohou odemknout osoby s podobným vzhledem, například vaše dítě nebo identický sourozenec.</string>
-+    <string name="security_settings_face_settings_remove_dialog_details_moto">Data, která se při odemknutí obličeje uloží, budou trvale a bezpečně smazána. Pokud chcete odemknout telefon po jejich odstranění, musíte zadat kód PIN, gesto nebo heslo.</string>
++    <string name="security_settings_face_settings_footer_moto">Zařízení odemknete pomocí odemknutí obličejem.\n\nNezapomeňte:\nTelefon můžete odemknout pohledem na obrazovku, i když to nemáte v úmyslu.\n\nVáš telefon může odemknout i jiná osoba, pokud jej podrží před vaším obličejem a vy budete mít otevřené oči.\n\nVáš telefon mohou odemknout osoby s podobným vzhledem, například vaše dítě nebo identický sourozenec.</string>
++    <string name="security_settings_face_settings_remove_dialog_details_moto">Data, která se při odemknutí obličeje uloží, budou trvale a bezpečně smazána. Pokud chcete odemknout telefon po jejich odstranění, musíte zadat kód PIN, gesto nebo heslo.</string>
 +</resources>
 diff --git a/res/values-da-rDK/moto_strings.xml b/res/values-da-rDK/moto_strings.xml
 new file mode 100644
-index 0000000000..dd770da94e
+index 00000000000..dd770da94e9
 --- /dev/null
 +++ b/res/values-da-rDK/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -187,7 +218,7 @@ index 0000000000..dd770da94e
 +</resources>
 diff --git a/res/values-de-rDE/moto_strings.xml b/res/values-de-rDE/moto_strings.xml
 new file mode 100644
-index 0000000000..135595cf5e
+index 00000000000..135595cf5e9
 --- /dev/null
 +++ b/res/values-de-rDE/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -198,7 +229,7 @@ index 0000000000..135595cf5e
 +</resources>
 diff --git a/res/values-el-rGR/moto_strings.xml b/res/values-el-rGR/moto_strings.xml
 new file mode 100644
-index 0000000000..29d30e723d
+index 00000000000..29d30e723d6
 --- /dev/null
 +++ b/res/values-el-rGR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -209,7 +240,7 @@ index 0000000000..29d30e723d
 +</resources>
 diff --git a/res/values-es-rES/moto_strings.xml b/res/values-es-rES/moto_strings.xml
 new file mode 100644
-index 0000000000..6764341893
+index 00000000000..67643418933
 --- /dev/null
 +++ b/res/values-es-rES/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -220,7 +251,7 @@ index 0000000000..6764341893
 +</resources>
 diff --git a/res/values-fa-rIR/moto_strings.xml b/res/values-fa-rIR/moto_strings.xml
 new file mode 100644
-index 0000000000..9759661238
+index 00000000000..97596612382
 --- /dev/null
 +++ b/res/values-fa-rIR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -231,7 +262,7 @@ index 0000000000..9759661238
 +</resources>
 diff --git a/res/values-fi-rFI/moto_strings.xml b/res/values-fi-rFI/moto_strings.xml
 new file mode 100644
-index 0000000000..b71545c73f
+index 00000000000..b71545c73fe
 --- /dev/null
 +++ b/res/values-fi-rFI/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -242,7 +273,7 @@ index 0000000000..b71545c73f
 +</resources>
 diff --git a/res/values-fr-rFR/moto_strings.xml b/res/values-fr-rFR/moto_strings.xml
 new file mode 100644
-index 0000000000..00fd659785
+index 00000000000..00fd659785b
 --- /dev/null
 +++ b/res/values-fr-rFR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -253,7 +284,7 @@ index 0000000000..00fd659785
 +</resources>
 diff --git a/res/values-hi-rIN/moto_strings.xml b/res/values-hi-rIN/moto_strings.xml
 new file mode 100644
-index 0000000000..4e33224d85
+index 00000000000..4e33224d859
 --- /dev/null
 +++ b/res/values-hi-rIN/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -264,7 +295,7 @@ index 0000000000..4e33224d85
 +</resources>
 diff --git a/res/values-hr-rHR/moto_strings.xml b/res/values-hr-rHR/moto_strings.xml
 new file mode 100644
-index 0000000000..5aadf4935e
+index 00000000000..5aadf4935e9
 --- /dev/null
 +++ b/res/values-hr-rHR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -275,7 +306,7 @@ index 0000000000..5aadf4935e
 +</resources>
 diff --git a/res/values-hu-rHU/moto_strings.xml b/res/values-hu-rHU/moto_strings.xml
 new file mode 100644
-index 0000000000..313936ca3c
+index 00000000000..313936ca3ce
 --- /dev/null
 +++ b/res/values-hu-rHU/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -286,7 +317,7 @@ index 0000000000..313936ca3c
 +</resources>
 diff --git a/res/values-in-rID/moto_strings.xml b/res/values-in-rID/moto_strings.xml
 new file mode 100644
-index 0000000000..7edfc2e3dc
+index 00000000000..7edfc2e3dcf
 --- /dev/null
 +++ b/res/values-in-rID/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -297,7 +328,7 @@ index 0000000000..7edfc2e3dc
 +</resources>
 diff --git a/res/values-it-rIT/moto_strings.xml b/res/values-it-rIT/moto_strings.xml
 new file mode 100644
-index 0000000000..1be03f1b10
+index 00000000000..1be03f1b104
 --- /dev/null
 +++ b/res/values-it-rIT/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -308,7 +339,7 @@ index 0000000000..1be03f1b10
 +</resources>
 diff --git a/res/values-iw-rIL/moto_strings.xml b/res/values-iw-rIL/moto_strings.xml
 new file mode 100644
-index 0000000000..33ed32df4e
+index 00000000000..33ed32df4ef
 --- /dev/null
 +++ b/res/values-iw-rIL/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -319,7 +350,7 @@ index 0000000000..33ed32df4e
 +</resources>
 diff --git a/res/values-ja-rJP/moto_strings.xml b/res/values-ja-rJP/moto_strings.xml
 new file mode 100644
-index 0000000000..3d60125efe
+index 00000000000..3d60125efeb
 --- /dev/null
 +++ b/res/values-ja-rJP/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -330,7 +361,7 @@ index 0000000000..3d60125efe
 +</resources>
 diff --git a/res/values-km-rKH/moto_strings.xml b/res/values-km-rKH/moto_strings.xml
 new file mode 100644
-index 0000000000..69d3d96255
+index 00000000000..69d3d96255a
 --- /dev/null
 +++ b/res/values-km-rKH/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -341,7 +372,7 @@ index 0000000000..69d3d96255
 +</resources>
 diff --git a/res/values-ko-rKR/moto_strings.xml b/res/values-ko-rKR/moto_strings.xml
 new file mode 100644
-index 0000000000..0326bfcde7
+index 00000000000..0326bfcde78
 --- /dev/null
 +++ b/res/values-ko-rKR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -352,7 +383,7 @@ index 0000000000..0326bfcde7
 +</resources>
 diff --git a/res/values-ku-rTR/moto_strings.xml b/res/values-ku-rTR/moto_strings.xml
 new file mode 100644
-index 0000000000..7a260dbef3
+index 00000000000..7a260dbef36
 --- /dev/null
 +++ b/res/values-ku-rTR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -363,7 +394,7 @@ index 0000000000..7a260dbef3
 +</resources>
 diff --git a/res/values-mk-rMK/moto_strings.xml b/res/values-mk-rMK/moto_strings.xml
 new file mode 100644
-index 0000000000..d5eeadfaed
+index 00000000000..d5eeadfaede
 --- /dev/null
 +++ b/res/values-mk-rMK/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -374,7 +405,7 @@ index 0000000000..d5eeadfaed
 +</resources>
 diff --git a/res/values-mr-rIN/moto_strings.xml b/res/values-mr-rIN/moto_strings.xml
 new file mode 100644
-index 0000000000..23c65e3d5b
+index 00000000000..23c65e3d5ba
 --- /dev/null
 +++ b/res/values-mr-rIN/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -385,7 +416,7 @@ index 0000000000..23c65e3d5b
 +</resources>
 diff --git a/res/values-ms-rMY/moto_strings.xml b/res/values-ms-rMY/moto_strings.xml
 new file mode 100644
-index 0000000000..3dcdcea739
+index 00000000000..3dcdcea7391
 --- /dev/null
 +++ b/res/values-ms-rMY/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -396,7 +427,7 @@ index 0000000000..3dcdcea739
 +</resources>
 diff --git a/res/values-my-rMM/moto_strings.xml b/res/values-my-rMM/moto_strings.xml
 new file mode 100644
-index 0000000000..69ad18f068
+index 00000000000..69ad18f068b
 --- /dev/null
 +++ b/res/values-my-rMM/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -407,7 +438,7 @@ index 0000000000..69ad18f068
 +</resources>
 diff --git a/res/values-nb-rNO/moto_strings.xml b/res/values-nb-rNO/moto_strings.xml
 new file mode 100644
-index 0000000000..a13772254e
+index 00000000000..a13772254ea
 --- /dev/null
 +++ b/res/values-nb-rNO/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -418,7 +449,7 @@ index 0000000000..a13772254e
 +</resources>
 diff --git a/res/values-nl-rNL/moto_strings.xml b/res/values-nl-rNL/moto_strings.xml
 new file mode 100644
-index 0000000000..d677ecf4d6
+index 00000000000..d677ecf4d64
 --- /dev/null
 +++ b/res/values-nl-rNL/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -429,7 +460,7 @@ index 0000000000..d677ecf4d6
 +</resources>
 diff --git a/res/values-pl-rPL/moto_strings.xml b/res/values-pl-rPL/moto_strings.xml
 new file mode 100644
-index 0000000000..704570ea86
+index 00000000000..704570ea86c
 --- /dev/null
 +++ b/res/values-pl-rPL/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -440,7 +471,7 @@ index 0000000000..704570ea86
 +</resources>
 diff --git a/res/values-pt-rBR/moto_strings.xml b/res/values-pt-rBR/moto_strings.xml
 new file mode 100644
-index 0000000000..3930bbf39a
+index 00000000000..3930bbf39a7
 --- /dev/null
 +++ b/res/values-pt-rBR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -451,7 +482,7 @@ index 0000000000..3930bbf39a
 +</resources>
 diff --git a/res/values-pt-rPT/moto_strings.xml b/res/values-pt-rPT/moto_strings.xml
 new file mode 100644
-index 0000000000..3930bbf39a
+index 00000000000..3930bbf39a7
 --- /dev/null
 +++ b/res/values-pt-rPT/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -462,7 +493,7 @@ index 0000000000..3930bbf39a
 +</resources>
 diff --git a/res/values-ro-rRO/moto_strings.xml b/res/values-ro-rRO/moto_strings.xml
 new file mode 100644
-index 0000000000..939c58462c
+index 00000000000..939c58462cb
 --- /dev/null
 +++ b/res/values-ro-rRO/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -473,7 +504,7 @@ index 0000000000..939c58462c
 +</resources>
 diff --git a/res/values-ru-rRU/moto_strings.xml b/res/values-ru-rRU/moto_strings.xml
 new file mode 100644
-index 0000000000..bd8df20b19
+index 00000000000..bd8df20b19b
 --- /dev/null
 +++ b/res/values-ru-rRU/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -484,7 +515,7 @@ index 0000000000..bd8df20b19
 +</resources>
 diff --git a/res/values-si-rLK/moto_strings.xml b/res/values-si-rLK/moto_strings.xml
 new file mode 100644
-index 0000000000..fe2af420fd
+index 00000000000..fe2af420fd5
 --- /dev/null
 +++ b/res/values-si-rLK/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -495,7 +526,7 @@ index 0000000000..fe2af420fd
 +</resources>
 diff --git a/res/values-sk-rSK/moto_strings.xml b/res/values-sk-rSK/moto_strings.xml
 new file mode 100644
-index 0000000000..25df8c8a5f
+index 00000000000..25df8c8a5f4
 --- /dev/null
 +++ b/res/values-sk-rSK/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -506,7 +537,7 @@ index 0000000000..25df8c8a5f
 +</resources>
 diff --git a/res/values-sl-rSI/moto_strings.xml b/res/values-sl-rSI/moto_strings.xml
 new file mode 100644
-index 0000000000..d88fd6e4a1
+index 00000000000..d88fd6e4a1d
 --- /dev/null
 +++ b/res/values-sl-rSI/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -517,7 +548,7 @@ index 0000000000..d88fd6e4a1
 +</resources>
 diff --git a/res/values-sr-rSP/moto_strings.xml b/res/values-sr-rSP/moto_strings.xml
 new file mode 100644
-index 0000000000..5cc8c00bd2
+index 00000000000..5cc8c00bd27
 --- /dev/null
 +++ b/res/values-sr-rSP/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -528,7 +559,7 @@ index 0000000000..5cc8c00bd2
 +</resources>
 diff --git a/res/values-sv-rSE/moto_strings.xml b/res/values-sv-rSE/moto_strings.xml
 new file mode 100644
-index 0000000000..a6bd27b4ba
+index 00000000000..a6bd27b4baa
 --- /dev/null
 +++ b/res/values-sv-rSE/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -539,7 +570,7 @@ index 0000000000..a6bd27b4ba
 +</resources>
 diff --git a/res/values-ta-rIN/moto_strings.xml b/res/values-ta-rIN/moto_strings.xml
 new file mode 100644
-index 0000000000..1b06c67342
+index 00000000000..1b06c673424
 --- /dev/null
 +++ b/res/values-ta-rIN/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -550,7 +581,7 @@ index 0000000000..1b06c67342
 +</resources>
 diff --git a/res/values-th-rTH/moto_strings.xml b/res/values-th-rTH/moto_strings.xml
 new file mode 100644
-index 0000000000..3ee57a0755
+index 00000000000..3ee57a07555
 --- /dev/null
 +++ b/res/values-th-rTH/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -561,7 +592,7 @@ index 0000000000..3ee57a0755
 +</resources>
 diff --git a/res/values-tl-rPH/moto_strings.xml b/res/values-tl-rPH/moto_strings.xml
 new file mode 100644
-index 0000000000..861c22d346
+index 00000000000..861c22d346d
 --- /dev/null
 +++ b/res/values-tl-rPH/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -572,7 +603,7 @@ index 0000000000..861c22d346
 +</resources>
 diff --git a/res/values-tr-rTR/moto_strings.xml b/res/values-tr-rTR/moto_strings.xml
 new file mode 100644
-index 0000000000..a5c7c05f71
+index 00000000000..a5c7c05f714
 --- /dev/null
 +++ b/res/values-tr-rTR/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -583,7 +614,7 @@ index 0000000000..a5c7c05f71
 +</resources>
 diff --git a/res/values-uk-rUA/moto_strings.xml b/res/values-uk-rUA/moto_strings.xml
 new file mode 100644
-index 0000000000..7b174bf47e
+index 00000000000..7b174bf47ea
 --- /dev/null
 +++ b/res/values-uk-rUA/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -594,7 +625,7 @@ index 0000000000..7b174bf47e
 +</resources>
 diff --git a/res/values-vi-rVN/moto_strings.xml b/res/values-vi-rVN/moto_strings.xml
 new file mode 100644
-index 0000000000..d3335510cd
+index 00000000000..d3335510cd1
 --- /dev/null
 +++ b/res/values-vi-rVN/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -605,7 +636,7 @@ index 0000000000..d3335510cd
 +</resources>
 diff --git a/res/values-zh-rCN/moto_strings.xml b/res/values-zh-rCN/moto_strings.xml
 new file mode 100644
-index 0000000000..580971f2f9
+index 00000000000..580971f2f96
 --- /dev/null
 +++ b/res/values-zh-rCN/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -616,7 +647,7 @@ index 0000000000..580971f2f9
 +</resources>
 diff --git a/res/values-zh-rHK/moto_strings.xml b/res/values-zh-rHK/moto_strings.xml
 new file mode 100644
-index 0000000000..40d6891e3a
+index 00000000000..40d6891e3ad
 --- /dev/null
 +++ b/res/values-zh-rHK/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -627,7 +658,7 @@ index 0000000000..40d6891e3a
 +</resources>
 diff --git a/res/values-zh-rSG/moto_strings.xml b/res/values-zh-rSG/moto_strings.xml
 new file mode 100644
-index 0000000000..40d6891e3a
+index 00000000000..40d6891e3ad
 --- /dev/null
 +++ b/res/values-zh-rSG/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -638,7 +669,7 @@ index 0000000000..40d6891e3a
 +</resources>
 diff --git a/res/values-zh-rTW/moto_strings.xml b/res/values-zh-rTW/moto_strings.xml
 new file mode 100644
-index 0000000000..40d6891e3a
+index 00000000000..40d6891e3ad
 --- /dev/null
 +++ b/res/values-zh-rTW/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -649,7 +680,7 @@ index 0000000000..40d6891e3a
 +</resources>
 diff --git a/res/values/moto_strings.xml b/res/values/moto_strings.xml
 new file mode 100644
-index 0000000000..7435204c92
+index 00000000000..7435204c926
 --- /dev/null
 +++ b/res/values/moto_strings.xml
 @@ -0,0 +1,5 @@
@@ -659,3 +690,473 @@ index 0000000000..7435204c92
 +    <string name="security_settings_face_settings_remove_dialog_details_moto">Data recorded by face unlock will be permanently and securely deleted. After removal, you will need your PIN, pattern, or password to unlock your phone.</string>
 +</resources>
 \ No newline at end of file
+diff --git a/res/xml/security_settings_face.xml b/res/xml/security_settings_face.xml
+index 759159fd105..d0f1d14ffe9 100644
+--- a/res/xml/security_settings_face.xml
++++ b/res/xml/security_settings_face.xml
+@@ -55,7 +55,8 @@
+ 
+     <PreferenceCategory
+         android:key="security_settings_face_manage_category"
+-        android:title="@string/security_settings_face_settings_require_category">
++        android:title="@string/security_settings_face_settings_require_category"
++        app:controller="com.android.settings.biometrics.face.FaceSettingsManagePreferenceController">
+         <com.havoc.support.preferences.SwitchPreference
+             android:key="security_settings_face_require_attention"
+             android:title="@string/security_settings_face_settings_require_attention"
+diff --git a/src/com/android/settings/Utils.java b/src/com/android/settings/Utils.java
+index 4db359c72bb..d4c9ae217a7 100644
+--- a/src/com/android/settings/Utils.java
++++ b/src/com/android/settings/Utils.java
+@@ -1072,4 +1072,19 @@ public final class Utils extends com.android.settingslib.Utils {
+         }
+         return input;
+     }
++
++    public static boolean isFaceDisabledByAdmin(Context context) {
++        DevicePolicyManager devicePolicyManager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
++        try {
++            if (devicePolicyManager.getPasswordQuality(null) > DevicePolicyManager.PASSWORD_QUALITY_MANAGED) {
++                return true;
++            }
++        } catch (SecurityException e) {
++            Log.e("Settings", "isFaceDisabledByAdmin error:", e);
++        }
++        if ((devicePolicyManager.getKeyguardDisabledFeatures(null) & DevicePolicyManager.KEYGUARD_DISABLE_FACE) != 0) {
++            return true;
++        }
++        return false;
++    }
+ }
+diff --git a/src/com/android/settings/biometrics/BiometricEnrollIntroduction.java b/src/com/android/settings/biometrics/BiometricEnrollIntroduction.java
+index d94686e3f27..2657862788b 100644
+--- a/src/com/android/settings/biometrics/BiometricEnrollIntroduction.java
++++ b/src/com/android/settings/biometrics/BiometricEnrollIntroduction.java
+@@ -44,7 +44,7 @@ public abstract class BiometricEnrollIntroduction extends BiometricEnrollBase
+         implements LinkSpan.OnClickListener {
+ 
+     private UserManager mUserManager;
+-    private boolean mHasPassword;
++    protected boolean mHasPassword;
+     private boolean mBiometricUnlockDisabledByAdmin;
+     private TextView mErrorText;
+     protected boolean mConfirmingCredentials;
+diff --git a/src/com/android/settings/biometrics/face/FaceEnrollIntroduction.java b/src/com/android/settings/biometrics/face/FaceEnrollIntroduction.java
+index 073c7e65e36..ddb8fc483f1 100644
+--- a/src/com/android/settings/biometrics/face/FaceEnrollIntroduction.java
++++ b/src/com/android/settings/biometrics/face/FaceEnrollIntroduction.java
+@@ -18,9 +18,11 @@ package com.android.settings.biometrics.face;
+ 
+ import android.app.admin.DevicePolicyManager;
+ import android.app.settings.SettingsEnums;
++import android.content.ComponentName;
+ import android.content.Intent;
+ import android.hardware.face.FaceManager;
+ import android.os.Bundle;
++import android.os.UserHandle;
+ import android.widget.TextView;
+ 
+ import com.android.settings.R;
+@@ -36,6 +38,8 @@ import com.google.android.setupcompat.util.WizardManagerHelper;
+ import com.google.android.setupdesign.span.LinkSpan;
+ import com.google.android.setupdesign.template.RequireScrollMixin;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
+ 
+     private static final String TAG = "FaceIntro";
+@@ -97,6 +101,9 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
+                         ? R.string.security_settings_face_enroll_introduction_footer_part_2
+                         : R.string.security_settings_face_settings_footer_attention_not_supported;
+         footer2.setText(footer2TextResource);
++        if (FaceUnlockUtils.hasMotoFaceUnlock() && mHasPassword && mToken != null) {
++            openMotoFaceUnlock();
++        }
+     }
+ 
+     @Override
+@@ -108,6 +115,42 @@ public class FaceEnrollIntroduction extends BiometricEnrollIntroduction {
+             finish();
+         }
+     }
++    @Override
++    public void onActivityResult(int requestCode, int resultCode, Intent data) {
++        super.onActivityResult(requestCode, resultCode, data);
++        if (!FaceUnlockUtils.hasMotoFaceUnlock()) {
++            return;
++        }
++        if (requestCode != CHOOSE_LOCK_GENERIC_REQUEST) {
++            if (requestCode != CONFIRM_REQUEST) {
++                if (requestCode == ENROLL_REQUEST) {
++                    if (resultCode == RESULT_FIRST_USER || resultCode == RESULT_OK) {
++                        setResult(RESULT_FIRST_USER);
++                        finish();
++                        return;
++                    }
++                    setResult(RESULT_CANCELED);
++                    finish();
++                }
++            } else if (resultCode == RESULT_OK && data != null) {
++                openMotoFaceUnlock();
++            }
++        } else if (resultCode == RESULT_FIRST_USER) {
++            openMotoFaceUnlock();
++        }
++    }
++
++    private void openMotoFaceUnlock() {
++        Intent intent = new Intent();
++        intent.putExtra(ChooseLockSettingsHelper.EXTRA_KEY_CHALLENGE_TOKEN, mToken);
++        if (mUserId != UserHandle.USER_NULL) {
++            intent.putExtra(Intent.EXTRA_USER_ID, mUserId);
++        }
++        intent.setComponent(new ComponentName("com.motorola.faceunlock", "com.motorola.faceunlock.SetupFaceIntroActivity"));
++        if (intent.resolveActivity(getPackageManager()) != null) {
++            startActivityForResult(intent, 5);
++        }
++    }
+ 
+     @Override
+     protected boolean isDisabledByAdmin() {
+diff --git a/src/com/android/settings/biometrics/face/FaceProfileStatusPreferenceController.java b/src/com/android/settings/biometrics/face/FaceProfileStatusPreferenceController.java
+index 56b325bdf89..7995c38f3d1 100644
+--- a/src/com/android/settings/biometrics/face/FaceProfileStatusPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceProfileStatusPreferenceController.java
+@@ -28,7 +28,7 @@ public class FaceProfileStatusPreferenceController extends FaceStatusPreferenceC
+     private static final String KEY_FACE_SETTINGS = "face_settings_profile";
+ 
+     public FaceProfileStatusPreferenceController(Context context) {
+-        super(context, KEY_FACE_SETTINGS);
++        super(context, KEY_FACE_SETTINGS, null);
+     }
+ 
+     @Override
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsAppPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsAppPreferenceController.java
+index a54171e8c42..d2e7af9d4bf 100644
+--- a/src/com/android/settings/biometrics/face/FaceSettingsAppPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceSettingsAppPreferenceController.java
+@@ -26,6 +26,8 @@ import com.android.settings.Utils;
+ 
+ import androidx.preference.Preference;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ /**
+  * Preference controller for Face settings page controlling the ability to use
+  * Face authentication in apps (through BiometricPrompt).
+@@ -78,6 +80,10 @@ public class FaceSettingsAppPreferenceController extends FaceSettingsPreferenceC
+ 
+     @Override
+     public int getAvailabilityStatus() {
++        if (FaceUnlockUtils.hasMotoFaceUnlock() ){
++            return UNSUPPORTED_ON_DEVICE;
++        }
++
+         if(mFaceManager == null){
+             return AVAILABLE_UNSEARCHABLE;
+         }
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
+index 95de367834d..18eaa1de5a5 100644
+--- a/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
+@@ -27,6 +27,8 @@ import androidx.preference.PreferenceScreen;
+ import com.android.settings.Utils;
+ import com.android.settings.core.TogglePreferenceController;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ import com.havoc.support.preferences.SwitchPreference;
+ 
+ /**
+@@ -120,6 +122,9 @@ public class FaceSettingsAttentionPreferenceController extends FaceSettingsPrefe
+ 
+     @Override
+     public int getAvailabilityStatus() {
++        if (FaceUnlockUtils.hasMotoFaceUnlock()){
++            return UNSUPPORTED_ON_DEVICE;
++        }
+         return AVAILABLE;
+     }
+ }
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsConfirmPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsConfirmPreferenceController.java
+index c65cd23342e..6d66bdd6d4f 100644
+--- a/src/com/android/settings/biometrics/face/FaceSettingsConfirmPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceSettingsConfirmPreferenceController.java
+@@ -27,6 +27,8 @@ import androidx.preference.Preference;
+ import com.android.settings.Utils;
+ import com.android.settings.core.TogglePreferenceController;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ /**
+  * Preference controller giving the user an option to always require confirmation.
+  */
+@@ -76,6 +78,9 @@ public class FaceSettingsConfirmPreferenceController extends FaceSettingsPrefere
+ 
+     @Override
+     public int getAvailabilityStatus() {
++        if (FaceUnlockUtils.hasMotoFaceUnlock() ){
++            return UNSUPPORTED_ON_DEVICE;
++        }
+         return AVAILABLE;
+     }
+ }
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsFooterPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsFooterPreferenceController.java
+index c66546790ea..65d20fbf9b1 100644
+--- a/src/com/android/settings/biometrics/face/FaceSettingsFooterPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceSettingsFooterPreferenceController.java
+@@ -28,6 +28,8 @@ import com.android.settings.utils.AnnotationSpan;
+ import com.android.settingslib.HelpUtils;
+ import com.android.settingslib.widget.FooterPreference;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ /**
+  * Footer for face settings showing the help text and help link.
+  */
+@@ -60,10 +62,14 @@ public class FaceSettingsFooterPreferenceController extends BasePreferenceContro
+         final AnnotationSpan.LinkInfo linkInfo =
+                 new AnnotationSpan.LinkInfo(mContext, ANNOTATION_URL, helpIntent);
+ 
+-        final int footerRes = mProvider.isAttentionSupported(mContext)
++        int footerRes = mProvider.isAttentionSupported(mContext)
+                 ? R.string.security_settings_face_settings_footer
+                 : R.string.security_settings_face_settings_footer_attention_not_supported;
+ 
++        if (FaceUnlockUtils.hasMotoFaceUnlock()){
++            footerRes = R.string.security_settings_face_settings_footer_moto;
++        }
++
+         preference.setTitle(AnnotationSpan.linkify(
+                 mContext.getText(footerRes), linkInfo));
+     }
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsManagePreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsManagePreferenceController.java
+new file mode 100644
+index 00000000000..18a58b8db6f
+--- /dev/null
++++ b/src/com/android/settings/biometrics/face/FaceSettingsManagePreferenceController.java
+@@ -0,0 +1,43 @@
++/*
++ * Copyright (C) 2018 The Android Open Source Project
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License
++ */
++
++package com.android.settings.biometrics.face;
++
++import android.content.Context;
++
++import com.android.settings.core.BasePreferenceController;
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
++public class FaceSettingsManagePreferenceController extends BasePreferenceController {
++
++    public static final String KEY = "security_settings_face_manage_category";
++
++    public FaceSettingsManagePreferenceController(Context context, String preferenceKey) {
++        super(context, preferenceKey);
++    }
++
++    public FaceSettingsManagePreferenceController(Context context) {
++        this(context, KEY);
++    }
++
++    @Override
++    public int getAvailabilityStatus() {
++        if (FaceUnlockUtils.hasMotoFaceUnlock()){
++            return UNSUPPORTED_ON_DEVICE;
++        }
++        return AVAILABLE;
++    }
++}
+diff --git a/src/com/android/settings/biometrics/face/FaceSettingsRemoveButtonPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsRemoveButtonPreferenceController.java
+index 1c1b81df6c8..45b50aff3d4 100644
+--- a/src/com/android/settings/biometrics/face/FaceSettingsRemoveButtonPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceSettingsRemoveButtonPreferenceController.java
+@@ -39,6 +39,8 @@ import com.android.settingslib.widget.LayoutPreference;
+ 
+ import java.util.List;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ /**
+  * Controller for the remove button. This assumes that there is only a single face enrolled. The UI
+  * will likely change if multiple enrollments are allowed/supported.
+@@ -62,8 +64,13 @@ public class FaceSettingsRemoveButtonPreferenceController extends BasePreference
+         public Dialog onCreateDialog(Bundle savedInstanceState) {
+             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+ 
++            int remove_dialog_details_moto =
++                R.string.security_settings_face_settings_remove_dialog_details_moto;
++
+             builder.setTitle(R.string.security_settings_face_settings_remove_dialog_title)
+-                    .setMessage(R.string.security_settings_face_settings_remove_dialog_details)
++                    .setMessage(FaceUnlockUtils.hasMotoFaceUnlock() ?
++                        remove_dialog_details_moto :
++                        R.string.security_settings_face_settings_remove_dialog_details)
+                     .setPositiveButton(R.string.delete, mOnClickListener)
+                     .setNegativeButton(R.string.cancel, mOnClickListener);
+             AlertDialog dialog = builder.create();
+diff --git a/src/com/android/settings/biometrics/face/FaceStatusPreferenceController.java b/src/com/android/settings/biometrics/face/FaceStatusPreferenceController.java
+index cb82b5e8563..380493a0125 100644
+--- a/src/com/android/settings/biometrics/face/FaceStatusPreferenceController.java
++++ b/src/com/android/settings/biometrics/face/FaceStatusPreferenceController.java
+@@ -18,25 +18,55 @@ package com.android.settings.biometrics.face;
+ 
+ import android.content.Context;
+ import android.hardware.face.FaceManager;
++import androidx.preference.Preference;
++import androidx.preference.PreferenceCategory;
++import androidx.preference.PreferenceScreen;
+ 
+ import com.android.settings.R;
+ import com.android.settings.Settings;
+ import com.android.settings.Utils;
+ import com.android.settings.biometrics.BiometricStatusPreferenceController;
++import com.android.settings.overlay.FeatureFactory;
++import com.android.settings.security.SecurityFeatureProvider;
++import com.android.internal.widget.LockPatternUtils;
+ 
+-public class FaceStatusPreferenceController extends BiometricStatusPreferenceController {
++import com.android.settingslib.core.lifecycle.Lifecycle;
++import com.android.settingslib.core.lifecycle.LifecycleObserver;
++import com.android.settingslib.core.lifecycle.events.OnResume;
++
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
++public class FaceStatusPreferenceController extends BiometricStatusPreferenceController
++        implements LifecycleObserver, OnResume {
+ 
+     public static final String KEY_FACE_SETTINGS = "face_settings";
++    private static final String PREF_KEY_SECURITY_CATEGORY = "security_category";
+ 
+     protected final FaceManager mFaceManager;
++    protected final LockPatternUtils mLockPatternUtils;
++    private Preference mPreference;
+ 
+-    public FaceStatusPreferenceController(Context context) {
+-        this(context, KEY_FACE_SETTINGS);
++    public FaceStatusPreferenceController(Context context, Lifecycle lifecycle) {
++        this(context, KEY_FACE_SETTINGS, lifecycle);
+     }
+ 
+-    public FaceStatusPreferenceController(Context context, String key) {
++    public FaceStatusPreferenceController(Context context, String key,
++            Lifecycle lifecycle) {
+         super(context, key);
+         mFaceManager = Utils.getFaceManagerOrNull(context);
++        final SecurityFeatureProvider provider = FeatureFactory.getFactory(context)
++                .getSecurityFeatureProvider();
++        mLockPatternUtils = provider.getLockPatternUtils(context);
++        if (lifecycle != null) {
++            lifecycle.addObserver(this);
++        }
++    }
++
++    @Override
++    public void displayPreference(PreferenceScreen screen) {
++        super.displayPreference(screen);
++        PreferenceCategory category = screen.findPreference(PREF_KEY_SECURITY_CATEGORY);
++        mPreference = category.findPreference(KEY_FACE_SETTINGS);
+     }
+ 
+     @Override
+@@ -71,4 +101,31 @@ public class FaceStatusPreferenceController extends BiometricStatusPreferenceCon
+         return FaceEnrollIntroduction.class.getName();
+     }
+ 
++    @Override
++    public void onResume() {
++        if (mPreference != null){
++            updateEnabledState(mPreference);
++        }
++    }
++
++    @Override
++    public void updateState(Preference preference) {
++        super.updateState(preference);
++        updateEnabledState(preference);
++    }
++
++    private void updateEnabledState(Preference preference) {
++        if (FaceUnlockUtils.hasMotoFaceUnlock()) {
++            if (Utils.isFaceDisabledByAdmin(mContext)){
++                preference.setEnabled(false);
++                preference.setSummary(R.string.disabled_by_administrator_summary);
++            }else if (!mLockPatternUtils.isSecure(getUserId())){
++                preference.setEnabled(false);
++                preference.setSummary(R.string.disabled_because_no_backup_security);
++            }else{
++                preference.setEnabled(true);
++            }
++        }
++    }
++
+ }
+diff --git a/src/com/android/settings/password/ChooseLockGeneric.java b/src/com/android/settings/password/ChooseLockGeneric.java
+index 2a7de057193..6d4ed15991d 100644
+--- a/src/com/android/settings/password/ChooseLockGeneric.java
++++ b/src/com/android/settings/password/ChooseLockGeneric.java
+@@ -79,6 +79,8 @@ import com.android.settingslib.widget.FooterPreferenceMixinCompat;
+ 
+ import java.util.List;
+ 
++import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
++
+ public class ChooseLockGeneric extends SettingsActivity {
+     public static final String CONFIRM_CREDENTIALS = "confirm_credentials";
+ 
+@@ -879,9 +881,7 @@ public class ChooseLockGeneric extends SettingsActivity {
+         private void removeAllFaceForUserAndFinish(final int userId, RemovalTracker tracker) {
+             if (mFaceManager != null && mFaceManager.isHardwareDetected()) {
+                 if (mFaceManager.hasEnrolledTemplates(userId)) {
+-                    mFaceManager.setActiveUser(userId);
+-                    Face face = new Face(null, 0, 0);
+-                    mFaceManager.remove(face, userId,
++                    FaceManager.RemovalCallback removalCallback =
+                             new FaceManager.RemovalCallback() {
+                         @Override
+                         public void onRemovalError(Face face, int errMsgId, CharSequence err) {
+@@ -894,7 +894,17 @@ public class ChooseLockGeneric extends SettingsActivity {
+                                 removeManagedProfileFacesAndFinishIfNecessary(userId, tracker);
+                             }
+                         }
+-                    });
++                    };
++                    if (FaceUnlockUtils.hasMotoFaceUnlock()){
++                        final List<Face> faces = mFaceManager.getEnrolledFaces(userId);
++                        if (!faces.isEmpty()) {
++                            mFaceManager.remove(faces.get(0), userId, removalCallback);
++                        }
++                        return;
++                    }
++                    mFaceManager.setActiveUser(userId);
++                    Face face = new Face(null, 0, 0);
++                    mFaceManager.remove(face, userId, removalCallback);
+                 } else {
+                     // No faces in this user, we may also want to delete managed profile faces
+                     removeManagedProfileFacesAndFinishIfNecessary(userId, tracker);
+diff --git a/src/com/android/settings/security/SecuritySettings.java b/src/com/android/settings/security/SecuritySettings.java
+index 7c3391c0b58..fa2503f4e3b 100644
+--- a/src/com/android/settings/security/SecuritySettings.java
++++ b/src/com/android/settings/security/SecuritySettings.java
+@@ -113,7 +113,7 @@ public class SecuritySettings extends DashboardFragment {
+         controllers.add(new TrustAgentListPreferenceController(context, host, lifecycle));
+ 
+         final List<AbstractPreferenceController> securityPreferenceControllers = new ArrayList<>();
+-        securityPreferenceControllers.add(new FaceStatusPreferenceController(context));
++        securityPreferenceControllers.add(new FaceStatusPreferenceController(context, lifecycle));
+         securityPreferenceControllers.add(new FingerprintStatusPreferenceController(context));
+         securityPreferenceControllers.add(new ChangeScreenLockPreferenceController(context, host));
+         controllers.add(new PreferenceCategoryController(context, SECURITY_CATEGORY)

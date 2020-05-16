@@ -1,5 +1,4 @@
 ## FaceUnlock
 
-Clone this repo in external/moto/faceunlock and call 
-external/moto/faceunlock/regenerate/regenerate.sh to get back faceunlock 
-functionality
+Clone this repo in external/motorola/faceunlock and call 
+external/motorola/faceunlock/regenerate/regenerate.sh to restore faceunlock

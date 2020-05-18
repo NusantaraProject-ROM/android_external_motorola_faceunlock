@@ -137,8 +137,11 @@ index 8e4149aec36..5a71c509b98 100644
 +    zxing-core-1.7 \
 +    faceunlock_utils
  
- LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-     packages/apps/ConfigCenter/res
+ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+ LOCAL_AAPT_FLAGS := --auto-add-overlay \
+     --extra-packages com.dirtyunicorns.tweaks
+
 diff --git a/res/values-ar-rSA/moto_strings.xml b/res/values-ar-rSA/moto_strings.xml
 new file mode 100644
 index 00000000000..be6b0650f2c
@@ -701,7 +704,7 @@ index 759159fd105..d0f1d14ffe9 100644
 -        android:title="@string/security_settings_face_settings_require_category">
 +        android:title="@string/security_settings_face_settings_require_category"
 +        app:controller="com.android.settings.biometrics.face.FaceSettingsManagePreferenceController">
-         <com.havoc.support.preferences.SwitchPreference
+         <SwitchPreference
              android:key="security_settings_face_require_attention"
              android:title="@string/security_settings_face_settings_require_attention"
 diff --git a/src/com/android/settings/Utils.java b/src/com/android/settings/Utils.java
@@ -857,20 +860,20 @@ index a54171e8c42..d2e7af9d4bf 100644
              return AVAILABLE_UNSEARCHABLE;
          }
 diff --git a/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java b/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
-index 95de367834d..18eaa1de5a5 100644
+index 9ae6a874b0..16ab6df79c 100644
 --- a/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
 +++ b/src/com/android/settings/biometrics/face/FaceSettingsAttentionPreferenceController.java
-@@ -27,6 +27,8 @@ import androidx.preference.PreferenceScreen;
+@@ -28,6 +28,8 @@
  import com.android.settings.Utils;
  import com.android.settings.core.TogglePreferenceController;
- 
+
 +import com.android.internal.util.custom.faceunlock.FaceUnlockUtils;
 +
- import com.havoc.support.preferences.SwitchPreference;
- 
  /**
-@@ -120,6 +122,9 @@ public class FaceSettingsAttentionPreferenceController extends FaceSettingsPrefe
- 
+  * Preference controller that manages the ability to use face authentication with/without
+  * user attention. See {@link FaceManager#setRequireAttention(boolean, byte[])}.
+@@ -119,6 +121,9 @@ public boolean setChecked(boolean isChecked) {
+
      @Override
      public int getAvailabilityStatus() {
 +        if (FaceUnlockUtils.hasMotoFaceUnlock()){
